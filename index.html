@@ -34,15 +34,37 @@
 			<div class="slides">
 				
 				<section data-state="blue">
-					<h1 class="inverted">Responsive Design with PBS</h1>
+					<h1>Responsive Design with PBS</h1>
 					<ul>
-						<li><strong>Geoff Bishop</strong> - <small>Product Manager, PBS</small></li>
-						<li><strong>Dave Ackerman</strong> - <small>Designer/Front-End Developer - Modus Create</small></li>
+						<li><strong>Geoff Bishop</strong> - <small>Product Manager, <i>PBS</i></small></li>
+						<li><strong>Dave Ackerman</strong> - <small>Designer/Front-End Developer, <i>Modus Create</i></small></li>
 					</ul>
 					<img src="lib/img/logos.png" />
 				</section>
+
+				<!-- Geoff -->
+				<section data-state="purple">
+					<h2>Product Goals</h2>
+					<ul>
+						<li>My name is Geoff and I like ponies</li>
+					</ul>					
+				</section>
+
+				<!-- Geoff -->
+				<section data-state="purple">
+					<h2>Organizational Challenges</h2>
+				</section>			
+
+				<!-- Geoff -->
+				<section data-state="purple">
+					<h2>Challenges for Responsive Video</h2>
+				</section>						
+
+				<!-- Geoff -->
+				<section data-state="purple">
+					<h2>Video Delivery Challenges</h2>
+				</section>										
 				
-				<!-- Example of nested vertical slides -->
 				<section>
 					<h2>"Mobile First"</h2>
 					<ul>
@@ -171,11 +193,28 @@ $iPadLandscape: 1024px;</code></pre>
 					<div class="links">		
 						<p><small><a href="http://paulirish.com/2012/box-sizing-border-box-ftw/">border-box details</a></small></p>	
 					</div>
-				</section>		
+				</section>	
+
+				<section data-state="blackout">
+					<h4>Convert pixels to ems with SASS</h4>
+					<pre><code contenteditable>
+/* Default font size in pixels if not overridden. */
+$baseFontSize: 16;
+
+/* Convert PX units to EMs.
+Ex: margin-right: pem(16);
+*/
+@function pem($pxval, $base: $baseFontSize) {
+  @return #{$pxval / $base}em;
+}
+</code></pre>						
+				</section>
 				
 				<section data-state="blackout">
 					<img src="lib/img/modernizr.png" />
 					<h4>Use <a href="http://modernizr.com/">Modernizr</a> to deal with old, crappy phone browsers</h4>
+
+					<h4>Use <a href="https://github.com/scottjehl/Respond/">Respond.js</a> to polyfill media query support</h4>
 				</section>							
 
 				<section>
