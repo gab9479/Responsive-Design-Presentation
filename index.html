@@ -45,16 +45,25 @@
 				<!-- Example of nested vertical slides -->
 				<section>
 					<h2>"Mobile First"</h2>
-
+					<ul>
+						<li class="fragment">Unfortunately for existing projects, mainly a pipedream.</li>
+						<li class="fragment">Think about your content strategy.</li>
+						<li class="fragment">A dedicated mobile website could be a better, more efficient solution.</li>
+					</ul>											
 				</section>
 
 				<section>
-					<img src="lib/img/device-love.png">
+					<h2>
+						Learn to love your devices <br />
+						<small style="font-weight: normal;font-size: 16px;">even the shitty ones</small>
+					</h2>
+
+					<img style="border-radius: 20px;" src="lib/img/device-love.png">
 					<p><small><a href="http://www.flickr.com/photos/lukew/6171377827/in/photostream/">source</a></small></p>
 				</section>
 
 				<section>
-					<h2>Is Responsive Right?</h2>
+					<h2>Is responsive design right for me?</h2>
 					<ul>
 						<li class="fragment">Much harder to make an existing project responsive.</li>
 						<li class="fragment">Think about your content strategy.</li>
@@ -65,33 +74,52 @@
 				<section>
 					<h2>Design Challenges</h2>
 					<ul>
-						<li class="fragment">Dynamic content, content breaking</li>
-						<li class="fragment">Hover no longer exists</li>
+						<li class="fragment">Dynamic content, content wrapping, font scaling</li>
+						<li class="fragment">On mobile, <code>:hover</code> is no longer relevant.</li>
 						<li class="fragment">HTML source order, content reflowing</li>
+						<li class="fragment"><strong>Navigation paradigms</strong></li>
 					</ul>
-				</section>				
+				</section>			
+
+				<section>
+					<blockquote>The absence of a media query is in fact, the first media query.</blockquote>
+					<i><small>Bryan Rieger, Rethinking the Mobile Web</i></small>
+				</section>
+
+				<section>
+					<h2>Users don't do this:</h2>
+					<iframe width="420" height="315" src="http://www.youtube.com/embed/9yfp0z1WJHE" frameborder="0" allowfullscreen></iframe>
+
+				</section>
+
+				<section>
+				 <h4>If it’s layout prototype it.</h4>
+				 <p>...on real devices to clarify changes in context and the impact of naive capabilities and viewport conditions</p>
+
+				 <h4 style="margin-top: 60px;">If it’s visual design mock it up</h4>
+				 <p>...but then prototype to determine performance, impact of native fonts and em values, viewport coditions etc.</p>
+				</section>	
 
 				<section>
 					<h2>Iterative Workflow</h2>
 
 				</section>
 
-				<section data-state="blackout">
-					<h2>PSDs are...</h2>
+				<section data-state="blue">
+					<h2><img src="lib/img/ps.png" /> <br />PSDs are...</h2>
 					<ul>
-						<li class="fragment">Slow</li>
+						<li class="fragment">Slow to create</li>
 						<li class="fragment">Static</li>
-						<li class="fragment">Hard to iterate on</li>
-						<li class="fragment">Don't show interactivity</li>
+						<li class="fragment">Hard to quickly iterate on</li>
+						<li class="fragment">Don't show web interactivity</li>
 					</ul>
-					<p class="fragment"><strong>Too much interactivity and too many possible screen sizes to make flat design comps workable!</strong></p>
+					<p class="fragment"><strong>There is too much interactivity and too many possible screen sizes to make flat design comps workable!</strong></p>
 				</section>	
 
 				<section>
-					<h2>Ok, then what do you deliver?</h2>
+					<h2>Ok, so what do you deliver?</h2>
 					<ul>
 						<li class="fragment">Fully interactive HTML/CSS/JS prototypes</li>
-						<li class="fragment"></li>
 					</ul>					
 				</section>							
 
@@ -102,19 +130,53 @@
 					</ul>
 				</section>
 
-				<section>
-					<h2>Technology "Stack"</h2>
+				<section data-state="green">
+					<h2>Technology "Stack" & Tips</h2>
 					<ul>
 						<li class="fragment">Building a website responsively builds on fluid width principles + breakpoints.</li>
 						<li class="fragment">Leverage emerging JS/CSS strategies</li>
 					</ul>
 				</section>
 
-				<section>
-					<h3>Calculate widths with percentages</h3>
-					<code contenteditable style="font-size: 18px; margin-top: 20px;"></code>
+				<section data-state="blackout">
+					<img src="lib/img/sass-logo.png" />
+					<img src="lib/img/compass-logo.png" />
+					<h4>Use SASS + Compass</h4>
+					<p>Both invaluable tools for building modern, clean, cross-browser CSS</p>
+
+					<div class="links">
+						<small><a href="http://compass-style.org/">compass-style.org</a><br />
+						<a href="http://sass-lang.com/">sass-lang.com</a></small>
+					</div>
+				</section>				
+
+				<section data-state="blackout">
+					<h4>Convert pixel widths to percentages with SASS</h4>
+					<pre><code contenteditable>.sidebar { percentage(300px/$maxWidth) }</code></pre>
 				</section>
 
+				<section data-state="blackout">
+					<h4>Define breakpoints as variables</h4>
+					<pre><code contenteditable>$iPhonePortrait: 320px;
+$iPhoneLandscape: 480px;
+$Kindle: 600px;
+$iPadPortrait: 768px;
+$iPadLandscape: 1024px;</code></pre>
+				</section>		
+
+				<section data-state="blackout">
+					<h4>Size elements with border-box</h4>
+					<pre><code contenteditable>* { @include box-sizing(border-box); }</code></pre>		
+
+					<div class="links">		
+						<p><small><a href="http://paulirish.com/2012/box-sizing-border-box-ftw/">border-box details</a></small></p>	
+					</div>
+				</section>		
+				
+				<section data-state="blackout">
+					<img src="lib/img/modernizr.png" />
+					<h4>Use <a href="http://modernizr.com/">Modernizr</a> to deal with old, crappy phone browsers</h4>
+				</section>							
 
 				<section>
 					<h2>Other Resources</h2>
@@ -146,11 +208,6 @@
 					query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
 				} );
 
-				// Fires when a slide with data-state=customevent is activated
-				Reveal.addEventListener( 'customevent', function() {
-					console.log( '"customevent" has fired' );
-				} );
-
 				// Fires each time a new slide is activated
 				Reveal.addEventListener( 'slidechanged', function( event ) {
 					// event.previousSlide, event.currentSlide, event.indexh, event.indexv
@@ -175,8 +232,6 @@
 				hljs.initHighlightingOnLoad();
 			} );
 
-
-		</script>
-		
+		</script>		
 	</body>
 </html>
