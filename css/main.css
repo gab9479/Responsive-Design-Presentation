@@ -190,6 +190,10 @@ body {
 	line-height: 1.5;
 }
 
+.reveal code.small {
+	font-size: 18px;
+}
+
 .reveal table th, 
 .reveal table td {
  	 text-align: left;
