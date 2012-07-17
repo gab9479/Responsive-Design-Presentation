@@ -95,12 +95,18 @@
 				</section>
 
 				<section>
+					<h2>Your website, or app, probably isn't as simple as this:</h2>
+					<img src="lib/img/site.png">
+				</section>				
+
+				<section>
 					<h2>Design Challenges</h2>
 					<ul>
 						<li class="fragment">Dynamic content, content wrapping, font scaling</li>
 						<li class="fragment">On mobile, <code>:hover</code> is no longer relevant.</li>
 						<li class="fragment">HTML source order, content reflowing</li>
-						<li class="fragment"><strong>Navigation paradigms</strong></li>
+						<li class="fragment">Mobile browsers use whatever font they want</li>
+						<li class="fragment"><strong>Navigation paradigms across platforms</strong></li>
 					</ul>
 				</section>			
 
@@ -112,7 +118,7 @@
 				<section>
 					<h2>Users don't do this:</h2>
 					<iframe width="420" height="315" src="http://www.youtube.com/embed/9yfp0z1WJHE" frameborder="0" allowfullscreen></iframe>
-
+					<p>Resizing the browser is not a user interaction!</p>
 				</section>
 
 				<section>
@@ -120,7 +126,7 @@
 				 <p>...on real devices to clarify changes in context and the impact of naive capabilities and viewport conditions</p>
 
 				 <h4 style="margin-top: 60px;">If it’s visual design mock it up</h4>
-				 <p>...but then prototype to determine performance, impact of native fonts and em values, viewport coditions etc.</p>
+				 <p>...but then prototype to determine performance, impact of native fonts and em values, viewport conditions etc.</p>
 				</section>	
 
 				<section>
@@ -168,11 +174,6 @@
 
 					</ul>					
 				</section>							
-
-				<section>
-					<h2>Your website, or app, probably isn't as simple as this:</h2>
-					<img src="lib/img/site.png">
-				</section>
 
 				<section data-state="green">
 					<h2>Technology "Stack" & Tips</h2>
@@ -244,12 +245,13 @@ Ex: margin-right: pem(16);
 				<section data-state="blackout">
 					<img src="lib/img/modernizr.png" />
 					<h4>Use <a href="http://modernizr.com/">Modernizr</a> to deal with old, crappy phone browsers</h4>
-
 					<h4>Use <a href="https://github.com/scottjehl/Respond/">Respond.js</a> to polyfill media query support for sh*t browsers. </h4>
 				</section>		
 
 				<section data-state="blackout">
 					<h4>Use <a href="http://responsejs.com/">Response.js</a> to perform code block swapping, load images based on screen width, and more.</h4>
+					<pre><code class="small">img src="lo-fi.png" data-src481="medium.png" data-src1025="hi-fi.png" alt="example"</code></pre>
+					<pre><code class="small">data-r320="markup @ 320+" data-r961="markup @ 961+"</code></pre>
 				</section>					
 
 				<section>
