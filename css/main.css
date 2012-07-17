@@ -986,6 +986,10 @@ body {
 	background: rgba(15, 57, 108, 0.7 );
 }
 
+.stars .state-background {
+	background: url('../lib/img/menu-stars.gif');
+}
+
 /*********************************************
  * SPEAKER NOTES
  *********************************************/

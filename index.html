@@ -38,6 +38,7 @@
 					<ul>
 						<li><strong>Geoff Bishop</strong> - <small>Product Manager, <i>PBS</i></small></li>
 						<li><strong>Dave Ackerman</strong> - <small>Designer/Front-End Developer, <i>Modus Create</i></small></li>
+						<li>@gabishop - @dmackerman</li>
 					</ul>
 					<img src="lib/img/logos.png" />
 				</section>
@@ -127,6 +128,17 @@
 
 				</section>
 
+				<section>
+					<h2>"3 pillars" of responsive design.</h2>
+					<ul>
+						<li class="fragment">Media Queries</li>
+						<li class="fragment">Flexible Images</li>
+						<li class="fragment" style="text-decoration: line-through">Flexible Grids</li>
+						<p class="fragment">Grid is a misleading term. Not every responsive site has to be built on a grid.</p>
+					</ul>					
+
+				</section>				
+
 				<section data-state="blue">
 					<h2><img src="lib/img/ps.png" /> <br />PSDs are...</h2>
 					<ul>
@@ -139,17 +151,27 @@
 				</section>	
 
 				<section>
-					<h2>Ok, so what do you deliver?</h2>
+					<h2>The Ideal Front-End Developer</h2>
 					<ul>
-						<li class="fragment">Fully interactive HTML/CSS/JS prototypes</li>
+						<li class="fragment">Understands design principles</li>
+						<li class="fragment">Knows when a breakpoint should be added. Adds it.</li>
+						<li class="fragment">Circles back with the designer for design related questions.</li>
+						<li class="fragment">Don't show web interactivity</li>
 					</ul>					
-				</section>							
+				</section>				
 
 				<section>
-					<h2>Screen Sizes = no</h2>
-					<ul>
-						<li class="fragment">65% of Web developers surveyed design to common breakpoints (320px, 768px, etc.) but we need to be more device agnostic. (<a href="http://www.lukew.com/ff/entry.asp?1583">source</a>)</li>
-					</ul>
+					<h4>Ok, so what do designers deliver to develoeprs?</h4>
+					<p class="fragment"><strong>A style guide!</strong></p>
+					<p class="fragment">You can make one of those with <a href="https://github.com/adactio/Pattern-Primer/">Pattern Primer</a>!<br/>
+					<img src="lib/img/primer.png" /></p>
+
+					</ul>					
+				</section>							
+				
+				<section>
+					<h2>Your website, or app, probably isn't as simple as this:</h2>
+					<img src="lib/img/site.png">
 				</section>
 
 				<section data-state="green">
@@ -193,7 +215,18 @@ $iPadLandscape: 1024px;</code></pre>
 					<div class="links">		
 						<p><small><a href="http://paulirish.com/2012/box-sizing-border-box-ftw/">border-box details</a></small></p>	
 					</div>
-				</section>	
+				</section>
+
+				<section data-state="blackout">
+					<h4>Use the right meta viewport tag!</h4>
+					<pre><code contenteditable>meta name="viewport" content="width=device-width"</code></pre>		
+
+					<div class="links">		
+						<p><small><a href="http://www.quirksmode.org/blog/archives/2010/09/combining_meta.html">quirksmode.org reference</a></small></p>	
+					</div>
+				</section>					
+
+				
 
 				<section data-state="blackout">
 					<h4>Convert pixels to ems with SASS</h4>
@@ -214,18 +247,26 @@ Ex: margin-right: pem(16);
 					<img src="lib/img/modernizr.png" />
 					<h4>Use <a href="http://modernizr.com/">Modernizr</a> to deal with old, crappy phone browsers</h4>
 
-					<h4>Use <a href="https://github.com/scottjehl/Respond/">Respond.js</a> to polyfill media query support</h4>
-				</section>							
+					<h4>Use <a href="https://github.com/scottjehl/Respond/">Respond.js</a> to polyfill media query support for sh*t browsers. </h4>
+				</section>		
+
+				<section data-state="blackout">
+					<h4>Use <a href="http://responsejs.com/">Response.js</a> to perform code block swapping, load images based on screen width, and more.</h4>
+				</section>					
 
 				<section>
-					<h2>Other Resources</h2>
-					<p>So many resources available to be successful with Responsive Design</p>
+					<h2>Sweet Testing Tools</h2>
 					<ul>
-						<li><a href="http://mediaqueri.es/">http://mediaqueri.es/</a></li>
-						<li><a href="http://labs.adobe.com/technologies/shadow/">Adobe Shadow</a></li>
-						<li><a href="http://www.browserstack.com/">Browser Stack</a></li>
+						<!-- <li><a href="http://mediaqueri.es/">http://mediaqueri.es/</a></li> -->
+						<li><a href="http://labs.adobe.com/technologies/shadow/"><strong>Adobe Shadow</a></strong></li>
+						<li><a href="http://www.browserstack.com/"><strong>Browser Stack</strong></a></li>
 					</ul>
 				</section>
+
+				<section data-state="blackout">
+					<img src="lib/img/demo.png" />
+					<h2>LIVE DEMO</h2>
+				</section>					
 				
 			</div> <!-- end stories -->
 
@@ -258,8 +299,9 @@ Ex: margin-right: pem(16);
 					controls: false,
 					progress: true,
 					history: true,
+					mouseWheel: false,
 					rollingLinks: true,
-					theme: query.theme || 'neon', // default/neon/beige
+					theme: query.theme || 'default', // default/neon/beige
 					transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
 				});
 			} );
