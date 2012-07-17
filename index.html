@@ -129,14 +129,6 @@
 				</section>
 
 				<section>
-				 <h4>If it’s layout prototype it.</h4>
-				 <p>...on real devices to clarify changes in context and the impact of naive capabilities and viewport conditions</p>
-
-				 <h4 style="margin-top: 60px;">If it’s visual design mock it up</h4>
-				 <p>...but then prototype to determine performance, impact of native fonts and em values, viewport conditions etc.</p>
-				</section>	
-
-				<section>
 					<h2>"3 pillars" of responsive design.</h2>
 					<ul>
 						<li class="fragment">Media Queries</li>
@@ -157,6 +149,14 @@
 					</ul>
 				</section>
 
+				<section>
+				 <h4>If it’s layout prototype it.</h4>
+				 <p>...on real devices to clarify changes in context and the impact of naive capabilities and viewport conditions</p>
+
+				 <h4 style="margin-top: 60px;">If it’s visual design mock it up</h4>
+				 <p>...but then prototype to determine performance, impact of native fonts and em values, viewport conditions etc.</p>
+				</section>					
+
 				<section data-state="blue">
 					<h2><img src="lib/img/ps.png" /> <br />PSDs are...</h2>
 					<ul>
@@ -174,7 +174,7 @@
 						<li class="fragment">Understands design principles</li>
 						<li class="fragment">Knows when a breakpoint should be added. Adds it.</li>
 						<li class="fragment">Circles back with the designer for design related questions.</li>
-						<li class="fragment">Don't show web interactivity</li>
+						<li class=""
 					</ul>					
 				</section>				
 
@@ -192,6 +192,7 @@
 					<ul>
 						<li class="fragment">Building a website responsively builds on fluid width principles + breakpoints.</li>
 						<li class="fragment">Leverage emerging JS/CSS strategies</li>
+						<li class="fragment"></li>
 					</ul>
 				</section>
 
@@ -209,21 +210,38 @@
 
 				<section data-state="blackout">
 					<h4>Convert pixel widths to percentages with SASS</h4>
-					<pre><code contenteditable>.sidebar { percentage(300px/$maxWidth) }</code></pre>
+					<pre><code contenteditable>
+$maxWidth: 1024px; // container width
+.sidebar { percentage(300px/$maxWidth) }</code></pre>
 				</section>
 
 				<section data-state="blackout">
-					<h4>Define breakpoints as variables</h4>
-					<pre><code contenteditable>$iPhonePortrait: 320px;
+					<h4>Define your breakpoints as variables</h4>
+					<pre><code class="small" contenteditable>$iPhonePortrait: 320px;
 $iPhoneLandscape: 480px;
 $Kindle: 600px;
 $iPadPortrait: 768px;
-$iPadLandscape: 1024px;</code></pre>
+$iPadLandscape: 1024px;
+
+@media all and (min-width: $iPadPortrait) and (max-width: $iPadLandscape) {
+	// code I want to only apply on these 2 devices
+}
+</code></pre>
 				</section>		
 
 				<section data-state="blackout">
 					<h4>Size elements with border-box</h4>
-					<pre><code contenteditable>* { @include box-sizing(border-box); }</code></pre>		
+					<pre><code class="small" contenteditable>// import Compass CSS3 libraries
+import 'compass/css3';
+
+* { @include box-sizing(border-box); }</code></pre>		
+
+<p><code>border-box</code> sizing allows us size element widths without worrying about padding.</p>
+
+<pre><code class="small" contenteditable>.leftDiv { width: 30%; float: left; padding: 2em; }
+	.rightDiv { width: 70%; float: left; padding: 2em; }
+</code></pre>
+
 
 					<div class="links">		
 						<p><small><a href="http://paulirish.com/2012/box-sizing-border-box-ftw/">border-box details</a></small></p>	
