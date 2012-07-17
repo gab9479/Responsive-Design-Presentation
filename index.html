@@ -47,7 +47,7 @@
 					<h2>Our Mobile Offering</h2>
 					<ul>
 						<li class="fragment">3 Video Apps for iPhone & iPad (Kids + GA)</li>
-						<li class="fragment">69MM mobile streams per month</li>
+						<li class="fragment">69M mobile streams per month</li>
 						<li class="fragment">Thats 27% of hours total hours watched (and growing)</li>
 						<li class="fragment">48% of streams (and growing)</li>
 					</ul>					
@@ -107,14 +107,12 @@
 					<h2>"Mobile First" Mindset @ PBS</h2>
 					<ul>
 						<li class="fragment">Unfortunately for existing projects, mainly a pipedream.</li>
-						<li class="fragment">Think about your content strategy.</li>
-						<li class="fragment">A dedicated mobile website could be a better, more efficient solution.</li>
 					</ul>											
 				</section>
 
 				<section>
 					<h2>
-						Learn to love your devices <br />
+						Learn to love (and test on) your devices <br />
 						<small style="font-weight: normal;font-size: 16px;">even the shitty ones</small>
 					</h2>
 
@@ -172,15 +170,7 @@
 						<li class="fragment">Circle back with designers, reference the style guide, clean up visuals</li>
 						<li class="fragment">TEST your prototypes across devices, find out where it breaks</li>
 					</ul>
-				</section>
-
-				<section>
-				 <h4>If it’s layout prototype it.</h4>
-				 <p>...on real devices to clarify changes in context and the impact of naive capabilities and viewport conditions</p>
-
-				 <h4 style="margin-top: 60px;">If it’s visual design mock it up</h4>
-				 <p>...but then prototype to determine performance, impact of native fonts and em values, viewport conditions etc.</p>
-				</section>					
+				</section>				
 
 				<section data-state="blue">
 					<h2><img src="lib/img/ps.png" /> <br />PSDs are...</h2>
@@ -199,7 +189,6 @@
 						<li class="fragment">Understands design principles</li>
 						<li class="fragment">Knows when a breakpoint should be added. Adds it.</li>
 						<li class="fragment">Circles back with the designer for design related questions.</li>
-						<li class=""
 					</ul>					
 				</section>				
 
@@ -208,8 +197,6 @@
 					<p class="fragment"><strong>A style guide!</strong></p>
 					<p class="fragment">You can make one of those with <a href="https://github.com/adactio/Pattern-Primer/">Pattern Primer</a>!<br/>
 					<img src="lib/img/primer.png" /></p>
-
-					</ul>					
 				</section>							
 
 				<section data-state="green">
@@ -217,7 +204,6 @@
 					<ul>
 						<li class="fragment">Building a website responsively builds on fluid width principles + breakpoints.</li>
 						<li class="fragment">Leverage emerging JS/CSS strategies</li>
-						<li class="fragment"></li>
 					</ul>
 				</section>
 
@@ -235,9 +221,8 @@
 
 				<section data-state="blackout">
 					<h4>Convert pixel widths to percentages with SASS</h4>
-					<pre><code contenteditable>
-$maxWidth: 1024px; // container width
-.sidebar { percentage(300px/$maxWidth) }</code></pre>
+					<pre><code class="small" contenteditable>$maxWidth: 1024px; // container width
+.sidebar { percentage(300px/$maxWidth) } // 29.297%</code></pre>
 				</section>
 
 				<section data-state="blackout">
@@ -284,16 +269,15 @@ import 'compass/css3';
 
 				<section data-state="blackout">
 					<h4>Convert pixels to ems with SASS</h4>
-					<pre><code contenteditable>
-/* Default font size in pixels if not overridden. */
+					<pre><code contenteditable>// Default font size in pixels if not overridden.
 $baseFontSize: 16;
 
-/* Convert PX units to EMs.
-Ex: margin-right: pem(16);
-*/
+// Convert PX units to EMs.
 @function pem($pxval, $base: $baseFontSize) {
   @return #{$pxval / $base}em;
 }
+
+.h2 { @include pem(12) } // 12/16 = .75em
 </code></pre>						
 				</section>
 				
@@ -305,8 +289,15 @@ Ex: margin-right: pem(16);
 
 				<section data-state="blackout">
 					<h4>Use <a href="http://responsejs.com/">Response.js</a> to perform code block swapping, load images based on screen width, and more.</h4>
-					<pre><code class="small">img src="lo-fi.png" data-src481="medium.png" data-src1025="hi-fi.png" alt="example"</code></pre>
-					<pre><code class="small">data-r320="markup @ 320+" data-r961="markup @ 961+"</code></pre>
+					<pre><code class="small">&lt;body data-responsejs='{
+    "create": [
+    { "breakpoints": [0,320,481,641,961,1025,1281], "mode": "src", "prefix": "src" }, 
+    { "breakpoints": [0,320,481,641,961,1025,1281], "mode": "markup", "prefix": "r" }
+    ]}'
+&gt;
+</code></pre>						
+					<pre><code class="small">&lt;img src="lo-fi.png" data-src481="medium.png" data-src1025="hi-fi.png" alt="example"&gt;</code></pre>
+					<pre><code class="small">&lt;data-r320="markup @ 320+" data-r961="markup @ 961+"&gt;</code></pre>
 				</section>					
 
 				<section>
